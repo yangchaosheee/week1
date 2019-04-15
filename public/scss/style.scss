@@ -16,26 +16,63 @@
     }
     .header{
         height: change(45);
+        display: flex;
+        justify-content: space-between;
+        padding:0 change(12);
+        align-items: center;
+        >img{
+            height: change(27);
+        }
     }
     .main{
         flex: 1;
         overflow-y: scroll;
+        .main-wrapper{
+            .main-head{
+                height: change(207);
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .swiper-pagination{
+                    >span{
+                        padding:change(4);
+                    }
+                }
+            }
+            .main-title{
+                height: change(118);
+                background: url("../images/content.png") no-repeat center;
+                background-size: cover;
+            }
+            .main-content{
+                padding:change(10);
+                .main-content-show{
+                    border-bottom: 1px solid #ccc;
+                    display: flex;
+                    height: change(90);
+                    align-items: center;
+                    font-size: change(16);
+                    justify-content: space-between;
+                    >img{
+                        height: change(72);
+                        width: change(72);
+                        margin-right: change(16)
+                    }
+                    >p{
+                        font-size: change(18);
+                        line-height: change(20);
+                        flex: 1;
+                    }
+                }
+            }
+        }
     }
     .footer{
         height: change(45);
         display: flex;
         padding-top: change(3.5);
-        >a{
-            width: 20%;
-            height: 100%;
-            text-align: center;
-            >i{
-                font-size: change(22);
-            }
-            >p{
-                line-height: change(16)
-            }
-        }
+        background: #ccc;
     }
 }
 .ellip{
@@ -43,3 +80,5 @@
     text-overflow:ellipsis;
     white-space: nowrap;
 }
+
+
