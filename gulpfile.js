@@ -2,23 +2,23 @@ const gulp = require("gulp");
 const webserver = require("gulp-webserver");
 const Sass = require("gulp-sass");
 const mincss = require("gulp-clean-css");
-const minjs = require("gulp-uglify");
+const myminjs = require("gulp-uglify");
 
 const url = require("url");
-
+console.log(minjs)
 gulp.task("mymincss",()=>{
     return gulp.src("./public/css/**/*.css")
     .pipe(mincss())
-    .pipe(gulp.dest("./public/dist"))
+    .pipe(gulp.dest("./public/dist/newcss"))
 })
 
-gulp.task("myminjs",()=>{
-    return gulp.src("./public/js/index.js")
-    .pipe(minjs())
-    .pipe(gulp.dest("./public/dist"))
+gulp.task("changejs",()=>{
+    return gulp.src("./public/js/*.js")
+    .pipe(myminjs())
+    .pipe(gulp.dest("./public/newjs"))
 })
 
-gulp.task("minFile",gulp.series("mymincss","myminjs"))
+
 
 let data = require("./public/data/data.json");
 
